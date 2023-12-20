@@ -10,7 +10,7 @@
         {% for todo in todo_list %}
         <li>{{ todo.content }}</li>
         <form action="/delete/{{ todo.id }}">
-            <button type="submit" style="margin: 4px 0 12px;">delete</button>
+            <button type="submit" style="margin: 4px 0 12px; color: coral;">delete</button>
         </form>
         {% endfor %}
     </ul>
