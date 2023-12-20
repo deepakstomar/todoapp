@@ -1,0 +1,17 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+    <form action="/add/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="content">
+        <input type="submit" value="Add">
+        <!-- <button type="submit">Add</button> -->
+    </form>
+    <ul>
+        {% for todo in todo_list %}
+        <li>{{ todo.content }}</li>
+        <form action="/delete/{{ todo.id }}">
+            <button type="submit" style="margin: 4px 0 12px;">delete</button>
+        </form>
+        {% endfor %}
+    </ul>
+{% endblock %}
